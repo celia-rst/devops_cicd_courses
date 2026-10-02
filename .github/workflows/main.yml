@@ -1,0 +1,11 @@
+# .github/workflows/mon-premier-workflow.yml
+name: Mon Premier Workflow de Démo
+on:
+  push:
+    branches: [main]
+jobs:
+  dire-bonjour:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Hello, CI/CD!"
