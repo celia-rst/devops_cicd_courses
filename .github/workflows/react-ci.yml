@@ -37,6 +37,7 @@ jobs:
 
       - name: 5. Exécution du linter (ESLint)
         run: npm run lint
+        working-directory: cypress-react-app
 
       - name: 6. Exécution des tests
         run: npm test
