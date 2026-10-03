@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.11"] # On peut tester sur plusieurs versions ici
+        python-version: ["3.12"]
 
     steps:
       - name: 1. Checkout du code

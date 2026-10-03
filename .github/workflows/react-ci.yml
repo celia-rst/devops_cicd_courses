@@ -8,11 +8,11 @@ on:
 
 jobs:
   test:
-    name: Lancer les tests et le linting
+    name: Lancer les tests
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x, 20.x] # On peut tester sur plusieurs versions de Node
+        node-version: [20.19.x, 22.x]
 
     steps:
       - name: 1. Checkout du code
