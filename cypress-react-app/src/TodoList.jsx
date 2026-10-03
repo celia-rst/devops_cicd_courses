@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 
 const API_URL = "http://localhost:8000/api/tasks/";
@@ -11,9 +11,12 @@ export const TodoList = ({ credentials }) => {
   const [newTask, setNewTask] = useState("");
 
   // Configuration Axios pour envoyer l'authentification Basic à Django
-  const axiosConfig = {
-    auth: { username: credentials.email, password: credentials.password },
-  };
+  const axiosConfig = useMemo(
+    () => ({
+      auth: { username: credentials.email, password: credentials.password },
+    }),
+    [credentials.email, credentials.password],
+  );
 
   useEffect(() => {
     axios
@@ -26,7 +29,7 @@ export const TodoList = ({ credentials }) => {
         setError("Impossible de charger les tâches.");
         setLoading(false);
       });
-  }, []);
+  }, [axiosConfig]);
 
   const handleAddTask = () => {
     axios
