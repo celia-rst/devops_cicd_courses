@@ -23,3 +23,8 @@ class TaskDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     def get_queryset(self):
         # Même sécurité : on limite la recherche aux tâches de l'utilisateur
         return Task.objects.filter(owner=self.request.user)
+    
+    # Flake8 va détecter que cette variable n'est jamais utilisée
+    def ma_vue(request):
+        variable_inutile = "test"
+        return HttpResponse("Hello")

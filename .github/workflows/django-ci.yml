@@ -34,9 +34,17 @@ jobs:
       - name: 4. Installation des dépendances
         run: |
           python -m pip install --upgrade pip
-          pip install -r my_api_project/requirements.txt
+          pip install -r requirements.txt
+        working-directory: my_api_project
 
-      - name: 5. Exécution des tests
+      - name: 5. Exécution du linter (flake8)
+        run: |
+          # On exécute flake8 sur tout le projet. Les options sont expliquées ci-dessous.
+          # Cette commande va échouer si des erreurs de style sont trouvées.
+          flake8 . --count --show-source --statistics
+        working-directory: my_api_project
+
+      - name: 6. Exécution des tests
         run: |
           python manage.py test
         working-directory: my_api_project

@@ -11,6 +11,10 @@ export const Login = ({ onLoginSuccess }) => {
     onLoginSuccess(email, password);
   };
 
+   // ESLint va se plaindre : "'maVariable' is never reassigned. Use 'const' instead."
+  let maVariable = "test";
+  console.log(maVariable);
+
   return (
     <div data-cy="login-view">
       <h1>Connexion</h1>
