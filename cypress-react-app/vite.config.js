@@ -8,5 +8,6 @@ export default defineConfig(({ mode }) => ({
   test: {
     environment: 'jsdom',
     setupFiles: './src/testSetup.js',
+    base: '/devops_cicd_courses/',   // le nom du dépôt, avec les deux slashs
   },
 }))
