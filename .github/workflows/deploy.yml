@@ -20,12 +20,12 @@ jobs:
         with:
           node-version: "20" # On spécifie une version LTS (Long Term Support)
           cache: "npm" # Active le caching pour npm automatiquement
+          cache-dependency-path: cypress-react-app/package-lock.json
 
       # Étape 3 : Installer les dépendances
       - name: Installation des dépendances
         run: npm ci
         working-directory: cypress-react-app
-
 
       # Étape 4 : Lancer les tests
       - name: Exécution des tests
