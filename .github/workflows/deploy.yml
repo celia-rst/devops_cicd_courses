@@ -42,7 +42,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Le dossier à uploader, qui a été généré par 'npm run build'
-          path: "./build"
+          path: "./cypress-react-app/dist"
 
   # --- NOTRE NOUVEAU JOB DE DÉPLOIEMENT ---
   deploy:
